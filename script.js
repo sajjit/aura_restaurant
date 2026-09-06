@@ -50,16 +50,16 @@ tabBtns.forEach(btn => {
   });
 });
 
-// Allow highlight links (#sushi, #cocktails, #hookah) to open the right tab
+// Allow highlight links (#cocktails, #hookah) to open the right tab
 function openTabByHash(hash) {
   const id = hash.replace('#', '');
   const btn = document.querySelector(`.tab-btn[data-tab="${id}"]`);
   if (btn) btn.click();
 }
-document.querySelectorAll('a[href^="#sushi"], a[href^="#cocktails"], a[href^="#hookah"]').forEach(a => {
+document.querySelectorAll('a[href^="#cocktails"], a[href^="#hookah"]').forEach(a => {
   a.addEventListener('click', (e) => {
     const hash = a.getAttribute('href');
-    if (['#sushi', '#cocktails', '#hookah'].includes(hash)) {
+    if (['#cocktails', '#hookah'].includes(hash)) {
       openTabByHash(hash);
     }
   });
