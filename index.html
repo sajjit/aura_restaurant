@@ -22,52 +22,73 @@
 <meta name="twitter:image" content="https://aura-restaurant-nine.vercel.app/assets/og-image.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Big+Shoulders+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Big+Shoulders+Display:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <div class="grain"></div>
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
 
 <header class="nav" id="nav">
   <div class="nav-inner">
     <a href="#top" class="nav-logo">
       <img src="assets/aura-logo.png" alt="Aura Restaurant Bar Lounge">
     </a>
-    <nav class="nav-links" id="navLinks">
+    <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
       <a href="#menu">La Carte</a>
       <a href="#hookah">Hookah</a>
       <a href="#ambiance">L'Ambiance</a>
       <a href="#galerie">Galerie</a>
       <a href="#horaires">Horaires</a>
       <a href="#contact">Contact</a>
+      <a href="#" class="btn btn-gold js-reserve nav-reserve-mobile">Réserver une table</a>
     </nav>
     <a href="#" class="btn btn-gold nav-cta js-reserve">Réserver</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">
+    <button class="nav-toggle" id="navToggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
       <span></span><span></span><span></span>
     </button>
   </div>
 </header>
 
 <section class="hero" id="top">
-  <div class="hero-bg"></div>
   <div class="hero-glow glow-teal"></div>
   <div class="hero-glow glow-gold"></div>
   <div class="hero-mouse-glow" id="heroMouseGlow"></div>
 
-  <p class="hero-corner hero-corner-tl">Depuis 2026<br>Pointe-à-Pitre</p>
-  <p class="hero-corner hero-corner-br">Restaurant · Bar<br>Lounge · Hookah</p>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <p class="eyebrow hero-eyebrow">Pointe-à-Pitre · Guadeloupe</p>
+      <h1 class="hero-title">
+        <span class="sr-only">Aura Restaurant Bar Lounge — </span>
+        <span class="line"><span>Du midi</span></span>
+        <span class="line"><span>à la <em>nuit</em></span></span>
+      </h1>
+      <p class="hero-sub">Une adresse qui glisse du déjeuner ensoleillé aux nuits feutrées — cuisine créole &amp; fusion, cocktails signature et hookah lounge.</p>
+      <div class="hero-actions">
+        <a href="#" class="btn btn-gold js-reserve">Réserver une table</a>
+        <a href="#menu" class="btn btn-ghost">Découvrir la carte</a>
+      </div>
+    </div>
 
-  <div class="hero-content reveal">
-    <p class="eyebrow">Pointe-à-Pitre · Guadeloupe</p>
-    <img src="assets/aura-logo.png" alt="Aura" class="hero-logo">
-    <p class="hero-tagline">midi <span class="dot">·</span> soir <span class="dot">·</span> night</p>
-    <p class="hero-sub">Une adresse qui glisse du déjeuner ensoleillé aux nuits feutrées —<br class="br-desktop"> cuisine créole &amp; fusion, cocktails signature et hookah lounge.</p>
-    <div class="hero-actions">
-      <a href="#" class="btn btn-gold js-reserve">Réserver une table</a>
-      <a href="#menu" class="btn btn-ghost">Découvrir la carte</a>
+    <div class="hero-visual" id="heroVisual">
+      <div class="arch">
+        <img src="assets/gallery-cocktail-bar.jpg" alt="Cocktail signature au bar d'Aura, ambiance tamisée">
+      </div>
+      <span class="hero-tag">midi · soir · night</span>
+      <div class="spin-badge" aria-hidden="true">
+        <svg viewBox="0 0 200 200">
+          <defs>
+            <path id="badgeCircle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/>
+          </defs>
+          <text><textPath href="#badgeCircle" textLength="482" lengthAdjust="spacing">Restaurant · Bar · Lounge · Restaurant · Bar · Lounge · </textPath></text>
+        </svg>
+        <img src="assets/aura-logo.png" alt="">
+      </div>
     </div>
   </div>
+
+  <p class="hero-corner">Depuis 2026<br>Pointe-à-Pitre</p>
   <a href="#intro" class="scroll-cue" aria-label="Défiler">
     <span></span>
   </a>
@@ -79,79 +100,84 @@
     <span>Cocktails signature</span><span class="marquee-sep">✦</span>
     <span>Hookah Lounge</span><span class="marquee-sep">✦</span>
     <span>Cave à vins &amp; champagne</span><span class="marquee-sep">✦</span>
-    <span>Pointe-à-Pitre, Guadeloupe</span><span class="marquee-sep">✦</span>
+    <span>Pointe-à-Pitre</span><span class="marquee-sep">✦</span>
+    <span>Midi · Soir · Night</span><span class="marquee-sep">✦</span>
     <span>Cuisine créole &amp; fusion</span><span class="marquee-sep">✦</span>
     <span>Cocktails signature</span><span class="marquee-sep">✦</span>
     <span>Hookah Lounge</span><span class="marquee-sep">✦</span>
     <span>Cave à vins &amp; champagne</span><span class="marquee-sep">✦</span>
-    <span>Pointe-à-Pitre, Guadeloupe</span><span class="marquee-sep">✦</span>
+    <span>Pointe-à-Pitre</span><span class="marquee-sep">✦</span>
+    <span>Midi · Soir · Night</span><span class="marquee-sep">✦</span>
   </div>
 </div>
 
-<section class="intro" id="intro">
-  <div class="intro-inner">
-    <p class="kicker">01 — L'expérience Aura</p>
-    <h2 class="intro-lead reveal">Trois temps,<br>une seule adresse.</h2>
+<section class="times" id="intro">
+  <div class="times-inner">
+    <div class="times-head reveal">
+      <p class="kicker">01 — L'expérience Aura</p>
+      <h2 class="display-xl">Trois temps,<br><em>une seule adresse.</em></h2>
+    </div>
 
-    <div class="intro-rows">
-      <div class="intro-row reveal">
-        <span class="intro-row-num">Midi</span>
-        <div class="intro-row-body">
-          <h3>Le déjeuner</h3>
-          <p>Tartares frais, salades signature et grillades côté mer &amp; côté terre, pour une pause déjeuner qui prend son temps.</p>
-        </div>
-      </div>
-      <div class="intro-row reveal">
-        <span class="intro-row-num">Soir</span>
-        <div class="intro-row-body">
-          <h3>Le dîner</h3>
-          <p>Entrecôtes sélection du boucher, magret rôti et grillades qui s'enchaînent à la nuit tombée.</p>
-        </div>
-      </div>
-      <div class="intro-row reveal">
-        <span class="intro-row-num">Night</span>
-        <div class="intro-row-body">
-          <h3>La nuit</h3>
-          <p>Cocktails créations, cave à vins et champagne, pipes à chicha et saveurs feutrées jusqu'au bout de la nuit.</p>
-        </div>
-      </div>
+    <div class="times-list">
+      <a class="time-row reveal" href="#menu" data-tab-link="entrees" data-preview="assets/gallery-food.jpg">
+        <span class="time-idx">01</span>
+        <span class="time-word">Midi</span>
+        <span class="time-body"><strong>Le déjeuner</strong>Tartares frais, salades signature et grillades côté mer &amp; côté terre, pour une pause déjeuner qui prend son temps.</span>
+        <span class="time-arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="time-row reveal" href="#menu" data-tab-link="terre" data-preview="assets/gallery-skewers.jpg">
+        <span class="time-idx">02</span>
+        <span class="time-word">Soir</span>
+        <span class="time-body"><strong>Le dîner</strong>Entrecôtes sélection du boucher, magret rôti et grillades qui s'enchaînent à la nuit tombée.</span>
+        <span class="time-arrow" aria-hidden="true">→</span>
+      </a>
+      <a class="time-row reveal" href="#cocktails" data-preview="assets/gallery-cocktail-mint.jpg">
+        <span class="time-idx">03</span>
+        <span class="time-word">Night</span>
+        <span class="time-body"><strong>La nuit</strong>Cocktails créations, cave à vins et champagne, pipes à chicha et saveurs feutrées jusqu'au bout de la nuit.</span>
+        <span class="time-arrow" aria-hidden="true">→</span>
+      </a>
     </div>
   </div>
 </section>
 
-<section class="highlights">
-  <div class="highlights-head reveal">
-    <p class="kicker">02 — Nos Spécialités</p>
-    <h2 class="section-title">Ce qui fait Aura</h2>
-  </div>
-  <div class="highlights-inner">
-    <div class="highlight-card reveal">
-      <span class="highlight-num">01</span>
-      <div class="highlight-icon" aria-hidden="true">
-        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3">
-          <path d="M11 10 L24 25 L37 10 Z" stroke-linejoin="round"/>
-          <line x1="24" y1="25" x2="24" y2="38"/>
-          <line x1="15" y1="38" x2="33" y2="38"/>
-          <path d="M17 9 Q24 15 31 9" stroke-linecap="round"/>
-        </svg>
+<section class="specialties">
+  <div class="specialties-inner">
+    <div class="specialties-head reveal">
+      <div>
+        <p class="kicker">02 — Nos Spécialités</p>
+        <h2 class="display-xl">Ce qui fait<br><em>Aura</em></h2>
       </div>
-      <h3>Cocktail Création</h3>
-      <p>Dousè Kréyol, Flanm Pasyon, Pinky Lady — trois créations maison exclusives, aux côtés des classiques du monde entier.</p>
-      <a href="#cocktails" class="link-arrow">Voir les cocktails →</a>
     </div>
-    <div class="highlight-card reveal">
-      <span class="highlight-num">02</span>
-      <div class="highlight-icon" aria-hidden="true">
-        <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3">
-          <path d="M16 34 Q16 42 24 42 Q32 42 32 34 Q32 28 24 24 Q16 28 16 34 Z" stroke-linejoin="round"/>
-          <line x1="24" y1="24" x2="24" y2="8"/>
-          <ellipse cx="24" cy="8" rx="6" ry="2.3"/>
-          <path d="M30 29 Q39 31 36 39 Q34 45 41 43" stroke-linecap="round"/>
-        </svg>
-      </div>
-      <h3>Hookah Lounge</h3>
-      <p>Pipes Quasar &amp; El Badia Z6, plus de dix saveurs signature de Mi Amore à No Woman No Cry, pour prolonger la soirée.</p>
-      <a href="#hookah" class="link-arrow">Voir le menu hookah →</a>
+    <div class="spec-grid">
+      <a href="#cocktails" class="spec-card reveal">
+        <span class="spec-num">01</span>
+        <span class="spec-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3">
+            <path d="M11 10 L24 25 L37 10 Z" stroke-linejoin="round"/>
+            <line x1="24" y1="25" x2="24" y2="38"/>
+            <line x1="15" y1="38" x2="33" y2="38"/>
+            <path d="M17 9 Q24 15 31 9" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <h3>Cocktail<br>Création</h3>
+        <p>Dousè Kréyol, Flanm Pasyon, Pinky Lady — trois créations maison exclusives, aux côtés des classiques du monde entier.</p>
+        <span class="spec-link">Voir les cocktails →</span>
+      </a>
+      <a href="#hookah" class="spec-card reveal">
+        <span class="spec-num">02</span>
+        <span class="spec-icon" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.3">
+            <path d="M16 34 Q16 42 24 42 Q32 42 32 34 Q32 28 24 24 Q16 28 16 34 Z" stroke-linejoin="round"/>
+            <line x1="24" y1="24" x2="24" y2="8"/>
+            <ellipse cx="24" cy="8" rx="6" ry="2.3"/>
+            <path d="M30 29 Q39 31 36 39 Q34 45 41 43" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <h3>Hookah<br>Lounge</h3>
+        <p>Pipes Quasar &amp; El Badia Z6, plus de dix saveurs signature de Mi Amore à No Woman No Cry, pour prolonger la soirée.</p>
+        <span class="spec-link">Voir le menu hookah →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -159,9 +185,9 @@
 <section class="spotlight">
   <div class="spotlight-bg"></div>
   <div class="spotlight-overlay"></div>
-  <div class="spotlight-content reveal">
+  <div class="spotlight-content">
     <p class="kicker">Coup de cœur</p>
-    <blockquote class="spotlight-quote">Chaque assiette est pensée comme une invitation au voyage — entre saveurs créoles, fraîcheur du marché et gestes précis.</blockquote>
+    <blockquote class="spotlight-quote" id="spotlightQuote">Chaque assiette est pensée comme une invitation au voyage — entre saveurs créoles, fraîcheur du marché et gestes précis.</blockquote>
     <a href="#menu" class="link-arrow spotlight-link">Découvrir la carte →</a>
   </div>
 </section>
@@ -169,7 +195,7 @@
 <section class="menu-section" id="menu">
   <div class="menu-inner">
     <p class="kicker center">03 — La Carte</p>
-    <h2 class="section-title center">Notre Carte</h2>
+    <h2 class="display-xl center">Notre <em>Carte</em></h2>
 
     <div class="menu-tabs" id="menuTabs">
       <button class="tab-btn active" data-tab="entrees">Entrées &amp; Salades</button>
@@ -422,28 +448,41 @@
 </section>
 
 <section class="gallery" id="galerie">
-  <div class="gallery-inner">
-    <p class="kicker center">05 — Galerie</p>
-    <h2 class="section-title center">Un aperçu d'Aura</h2>
-    <div class="gallery-grid">
-      <a class="g-item g-tall reveal" href="assets/gallery-food.jpg" target="_blank" rel="noopener">
-        <img src="assets/gallery-food.jpg" alt="Plateau signature Aura, viandes grillées, salades et cocktails">
-        <span class="g-caption">Plateau signature</span>
-      </a>
-      <a class="g-item reveal" href="assets/gallery-cocktail-bar.jpg" target="_blank" rel="noopener">
-        <img src="assets/gallery-cocktail-bar.jpg" alt="Cocktail signature au bar d'Aura, ambiance tamisée">
-        <span class="g-caption">Au comptoir</span>
-      </a>
-      <a class="g-item reveal" href="assets/gallery-skewers.jpg" target="_blank" rel="noopener">
-        <img src="assets/gallery-skewers.jpg" alt="Brochettes de gambas grillées Aura">
-        <span class="g-caption">Brochettes royales</span>
-      </a>
-      <a class="g-item reveal" href="assets/gallery-cocktail-mint.jpg" target="_blank" rel="noopener">
-        <img src="assets/gallery-cocktail-mint.jpg" alt="Cocktail créole fruits rouges et menthe fraîche">
-        <span class="g-caption">Cocktail créole</span>
-      </a>
+  <div class="gallery-pin" id="galleryPin">
+    <div class="gallery-sticky">
+      <div class="gallery-track" id="galleryTrack">
+        <div class="g-intro">
+          <p class="kicker">05 — Galerie</p>
+          <h2 class="display-lg">Un aperçu<br><em>d'Aura</em></h2>
+          <p class="g-hint">Faites défiler <span aria-hidden="true">→</span></p>
+        </div>
+        <a class="g-card" href="assets/gallery-food.jpg" target="_blank" rel="noopener">
+          <img src="assets/gallery-food.jpg" alt="Plateau signature Aura, viandes grillées, salades et cocktails">
+          <span class="g-num">01</span>
+          <span class="g-caption">Plateau signature</span>
+        </a>
+        <a class="g-card" href="assets/gallery-cocktail-bar.jpg" target="_blank" rel="noopener">
+          <img src="assets/gallery-cocktail-bar.jpg" alt="Cocktail signature au bar d'Aura, ambiance tamisée">
+          <span class="g-num">02</span>
+          <span class="g-caption">Au comptoir</span>
+        </a>
+        <a class="g-card" href="assets/gallery-skewers.jpg" target="_blank" rel="noopener">
+          <img src="assets/gallery-skewers.jpg" alt="Brochettes de gambas grillées Aura">
+          <span class="g-num">03</span>
+          <span class="g-caption">Brochettes royales</span>
+        </a>
+        <a class="g-card" href="assets/gallery-cocktail-mint.jpg" target="_blank" rel="noopener">
+          <img src="assets/gallery-cocktail-mint.jpg" alt="Cocktail créole fruits rouges et menthe fraîche">
+          <span class="g-num">04</span>
+          <span class="g-caption">Cocktail créole</span>
+        </a>
+        <div class="g-end">
+          <p class="kicker">Suivez-nous</p>
+          <a href="https://www.instagram.com/aura_restaurant_bar_lounge/" target="_blank" rel="noopener" class="g-end-link">@aura_restaurant<wbr>_bar_lounge</a>
+        </div>
+      </div>
+      <div class="gallery-progress" aria-hidden="true"><span id="galleryBar"></span></div>
     </div>
-    <p class="gallery-credit">📸 <a href="https://www.instagram.com/aura_restaurant_bar_lounge/" target="_blank" rel="noopener">@aura_restaurant_bar_lounge</a></p>
   </div>
 </section>
 
@@ -451,7 +490,7 @@
   <div class="hl-inner">
     <div class="hl-hours reveal">
       <p class="kicker">06 — Horaires</p>
-      <h2 class="section-title">Nos Horaires</h2>
+      <h2 class="display-lg">Nos <em>Horaires</em></h2>
       <ul class="hours-list">
         <li><span>Lundi</span><span class="closed">Fermé</span></li>
         <li><span>Mardi</span><span>12h00 – 14h30 &amp; 19h00 – 23h00</span></li>
@@ -485,10 +524,11 @@
 
 <section class="cta-final">
   <div class="cta-final-inner reveal">
-    <h2 class="serif-lead">Envie d'y être ce soir&nbsp;?</h2>
+    <p class="kicker">À très vite</p>
+    <h2 class="display-xl">Envie d'y être<br><em>ce soir&nbsp;?</em></h2>
     <div class="hero-actions">
-      <a href="#" class="btn btn-gold js-reserve">Réserver par SMS</a>
-      <a href="https://www.instagram.com/aura_restaurant_bar_lounge/" target="_blank" rel="noopener" class="btn btn-ghost">Suivre sur Instagram</a>
+      <a href="#" class="btn btn-dark js-reserve">Réserver par SMS</a>
+      <a href="https://www.instagram.com/aura_restaurant_bar_lounge/" target="_blank" rel="noopener" class="btn btn-line-dark">Suivre sur Instagram</a>
     </div>
   </div>
 </section>
@@ -500,7 +540,10 @@
     <p><a href="tel:+590690530577">06 90 53 05 77</a> &nbsp;·&nbsp; <a href="https://www.instagram.com/aura_restaurant_bar_lounge/" target="_blank" rel="noopener">@aura_restaurant_bar_lounge</a></p>
     <p class="footer-copy">© <span id="year"></span> Aura Restaurant Bar Lounge</p>
   </div>
+  <div class="footer-mark" aria-hidden="true">Aura</div>
 </footer>
+
+
 
 <script src="script.js"></script>
 <script defer src="/_vercel/insights/script.js"></script>
